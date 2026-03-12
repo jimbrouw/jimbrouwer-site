@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─── */
+:root {
+  --color-bg: #F5F3F0;
+  --color-bg-elevated: #ECEAE6;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-text-tertiary: #999999;
+  --color-border: #E0DEDA;
+  --color-border-strong: #C8C4BE;
+  --color-accent: #2B5EA7;
+  --color-accent-hover: #1E4A85;
+  --color-white: #FFFFFF;
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+
+  --grid-gap: 1.5rem;
+  --section-gap: 6rem;
+  --container-max: 1280px;
+  --container-padding: 1.5rem;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+/* ─── Base ─── */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ─── Typography ─── */
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), "Courier New", monospace;
+}
+
+/* ─── Micro label (micrographic style) ─── */
+.micro-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ─── Rule lines ─── */
+.rule-top {
+  border-top: 1px solid var(--color-border);
+}
+
+.rule-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Container ─── */
+.container-site {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ─── Section spacing ─── */
+.section-gap {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+/* ─── Image treatment ─── */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--color-bg-elevated);
+}
+
+/* ─── Tag chip ─── */
+.tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  display: inline-block;
+}
+
+/* ─── Metadata strip ─── */
+.metadata-strip {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.metadata-strip span::before {
+  content: "—  ";
+  color: var(--color-border-strong);
+}
+
+.metadata-strip span:first-child::before {
+  content: "";
+}
+
+/* ─── Subtle fade-in ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* ─── Link hover ─── */
+a {
+  transition: color 0.15s ease;
+}
