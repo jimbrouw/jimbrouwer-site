@@ -52,7 +52,7 @@ export default function ArtTourAppPage() {
               preload="metadata"
               playsInline
             >
-              <source src="/videos/art-tour-app.mp4" type="video/mp4" />
+              <source src="https://9rojz9u5sdd0aq0g.public.blob.vercel-storage.com/Sequence%2001.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
