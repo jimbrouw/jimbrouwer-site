@@ -25,6 +25,9 @@ export interface Project {
   tags: string[];
   featured: boolean;
   images: ProjectImage[];
+  videoUrl?: string;
+  videoPoster?: string;
+  videoDescription?: string;
 }
 
 export type ServiceId =
@@ -33,6 +36,53 @@ export type ServiceId =
   | "workflow-automation";
 
 export const projects: Project[] = [
+  {
+    id: "art-tour-app",
+    title: "Nottingham Public Art Walk App",
+    client: "Collaborator Lucy Brouwer",
+    year: 2024,
+    summary:
+      "GPS-triggered audio tour application for the Nottingham Public Art Walk — 25 artworks across 2.5km of the city, with offline-first architecture and audio narration by Lucy Brouwer, art historian and tour guide.",
+    brief:
+      "Design and build a self-contained mobile tour application guiding visitors through 25 public artworks across Nottingham city centre. GPS triggers audio narration automatically as users approach each stop, based on The Watson Fothergill Walk route. The app needed to work fully offline — no gallery wifi or mobile data required inside the route.",
+    role: [
+      "Lead Developer",
+      "UX & Interface Design",
+      "Technical Architecture",
+    ],
+    technicalDelivery: [
+      "GPS-triggered audio playback at each of 25 artwork stops",
+      "Offline-first architecture — fully functional without internet",
+      "Background audio and lock screen controls for walking use",
+      "Interactive map with walking route and tap-to-preview for any stop",
+      "Onboarding flow with tour introduction audio by Lucy Brouwer",
+      "Built to run on visitor's own device — no hardware cost to the organiser",
+    ],
+    keyDecisions: [],
+    outcome:
+      "Working prototype delivered covering the full 2.5km, 90-minute route. Demonstrates a viable model for low-cost, high-quality visitor engagement that can be replicated across future walks and exhibitions without specialist hardware or infrastructure investment.",
+    services: ["creative-technology"],
+    tags: ["gps", "audio-tour", "offline-first", "mobile-app"],
+    featured: true,
+    images: [
+      {
+        src: "/images/projects/art-tour-app/screen-home.jpg",
+        alt: "App home screen showing the Nottingham Public Art Walk map",
+        caption: "[FIG.01] — Home screen with interactive map and artwork stops",
+        type: "hero",
+      },
+      {
+        src: "/images/projects/art-tour-app/screen-start.jpg",
+        alt: "App onboarding screen",
+        caption: "[FIG.02] — Onboarding and tour introduction screen",
+        type: "detail",
+      },
+    ],
+    videoUrl: "/videos/art-tour-app.mp4",
+    videoPoster: "/images/projects/art-tour-app/screen-home.jpg",
+    videoDescription:
+      "Prototype demo of the Nottingham Public Art Walk app — 25 public artworks, GPS-triggered audio, fully offline. Devised by Lucy Brouwer, built by Jim using vibe coding, Xcode and Google Maps.",
+  },
   {
     id: "donald-rodney",
     title: "Donald Rodney",

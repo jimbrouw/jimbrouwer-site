@@ -152,6 +152,32 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         {/* Main content */}
         <div className="md:col-span-8 md:col-start-5">
+          {/* Video */}
+          {project.videoUrl && (
+            <section className="mb-12">
+              <SectionLabel label="Video Demonstration" />
+              {project.videoDescription && (
+                <p className="text-base leading-relaxed text-[var(--color-text-secondary)] max-w-prose mb-6">
+                  {project.videoDescription}
+                </p>
+              )}
+              <div className="aspect-[9/16] w-full max-w-sm mx-auto overflow-hidden bg-[var(--color-bg-elevated)] rounded-lg">
+                <video
+                  src={project.videoUrl}
+                  controls
+                  playsInline
+                  muted
+                  loop
+                  preload="none"
+                  poster={project.videoPoster}
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </section>
+          )}
+
           {/* Brief */}
           <section className="mb-12">
             <SectionLabel label="Brief" />
