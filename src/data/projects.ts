@@ -78,7 +78,7 @@ export const projects: Project[] = [
         type: "detail",
       },
     ],
-    videoUrl: "/videos/art-tour-app.mp4",
+    videoUrl: "https://9rojz9u5sdd0aq0g.public.blob.vercel-storage.com/Sequence%2001.mp4",
     videoPoster: "/images/projects/art-tour-app/screen-home.jpg",
     videoDescription:
       "Prototype demo of the Nottingham Public Art Walk app — 25 public artworks, GPS-triggered audio, fully offline. Devised by Lucy Brouwer, built by Jim using vibe coding, Xcode and Google Maps.",
